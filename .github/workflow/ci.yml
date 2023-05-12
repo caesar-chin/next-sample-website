@@ -1,0 +1,26 @@
+name: CI
+
+on: [push, pull_request]
+
+env:
+  DATABASE_URL: "mysql://gupcsk8pnqp58lfj88k8:pscale_pw_BIoNAGealYeDiiJ4pz6hzq4bnDYGsQvRQv3oUtSokfL@aws.connect.psdb.cloud/next-test?sslaccept=strict"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Print Environment Variable
+        run: echo $MY_ENV_VAR

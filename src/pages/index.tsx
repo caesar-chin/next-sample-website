@@ -14,7 +14,7 @@ import { LoadingPage, LoadingSpinner } from "./components/loading";
 
 import Link from "next/link";
 import toast from "react-hot-toast";
-import { PageLayout } from "./components/layout";
+import PageLayout from "./components/layout";
 
 dayjs.extend(relativeTime);
 

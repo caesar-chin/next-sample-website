@@ -3,7 +3,7 @@ name: CI
 on: [push, pull_request]
 
 env:
-  DATABASE_URL: "mysql://gupcsk8pnqp58lfj88k8:pscale_pw_BIoNAGealYeDiiJ4pz6hzq4bnDYGsQvRQv3oUtSokfL@aws.connect.psdb.cloud/next-test?sslaccept=strict"
+  DATABASE_URL: "https://fake.com"
 
 jobs:
   build:

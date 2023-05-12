@@ -15,10 +15,11 @@ import type { Post } from "@prisma/client";
 
 const addUserDataToPosts = async (posts: Post[]) => {
   //Grabs all the users from clerk and filters to return id, username and profile image url
+  const userId = posts.map((post) => post.authorId);
   const users = (
     await clerkClient.users.getUserList({
-      userId: posts.map((post) => post.authorId),
-      limit: 100,
+      userId: userId,
+      limit: 110,
     })
   ).map(filterUserForClient);
 
